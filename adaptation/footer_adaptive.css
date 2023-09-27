@@ -27,3 +27,27 @@
         margin-right: 0;
     }
 }
+
+@media screen and (min-width: 2560px) {
+    .footer {
+        max-width: 2560px;
+        margin-right: 300px;
+    }
+
+    .footer__buttons {
+        margin-left: 800px;
+        margin-right: 750px;
+    }
+
+    .footer__line {
+        width: 75%;
+    }
+
+    .footer__logo {
+        margin-left: 117px;
+    }
+
+    .footer__text {
+        margin-right: 75px;
+    }
+}

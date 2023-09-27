@@ -1,22 +1,28 @@
 .header {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
     margin-top: 27px;
     margin-left: 15px;
-    width: 1200px;
+    /* width: 1200px; */
 }
 
 .header__nav ul {
     display: flex;
+    margin-left: 145px;
 }
 
 .header__nav-item {
     margin-right: 35px;
+    /* margin-left: 45px; */
 }
 
-.header__nav-logo {
+.header__logo {
     align-self: center;
+    margin-left: 150px;
+}
+.header__buttons{
+    margin-left: 300px;
 }
 
 .login {
@@ -36,7 +42,7 @@
 
 @keyframes mymove {
     0%   {top: 0px; background: rgba(255, 0, 0, 0.551); width: 100px;}
-    50% {top: 200px; background: rgba(255, 255, 0, 0.566); width: 300px;}
+    50% {top: 200px; background: rgba(255, 255, 0, 0.566); width: 150px;}
   }
 
 .register {
@@ -54,12 +60,8 @@
 
 @keyframes mymove2 {
     50%   {top: 0px; background: rgba(255, 0, 0, 0.551); width: 100px;}
-    0% {top: 200px; background: rgba(255, 255, 0, 0.566); width: 300px;}
+    0% {top: 200px; background: rgba(255, 255, 0, 0.566); width: 150px;}
   }
-
-.header__buttons {
-    margin-right: 18px;
-}
 
 input {
     display: none;

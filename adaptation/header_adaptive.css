@@ -110,51 +110,16 @@
 }
 
 @media screen and (min-width: 2560px) {
-    /* .header {
-        margin-left: 90px;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .header__nav-item {
-        margin-right: 35px;
+    .header {
+        max-width: 2560px;
+        margin-left: 192px;
     }
 
     .header__logo {
-        align-self: center;
-    } */
-    /* .header {
-        margin-left: auto;
-        margin-right: auto;
+        margin-left: 350px;
     }
 
-    .header__nav ul {
-        justify-content: flex-end;
+    .header__buttons {
+        margin-left: 360px;
     }
-
-    .header__nav-item {
-        margin-right: 50px;
-        margin-bottom: 0;
-    } */
-    /* .header {
-        flex-direction: row; /* Повертаємо горизонтальний напрямок */
-        /* justify-content: center; Центруємо всі елементи горизонтально */
-        /* align-items: flex-start; Відцентрувати всі елементи вертикально від лого */
-    /* }
-
-    .header__nav {
-        flex-direction: row;
-        align-items: center; 
-        margin-top: 0; 
-    }
-
-    .header__nav ul {
-        flex-direction: row;
-    }
-
-    .header__nav-item {
-        margin-right: 35px;
-        margin-bottom: 0;
-    } */
-
 }
