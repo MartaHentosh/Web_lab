@@ -18,7 +18,7 @@
     .header {
         margin: 0;
         background-color: white;
-        box-shadow: 1px 1px 5px 0px;
+        /* box-shadow: 1px 1px 5px 0px; */
         position: fixed;
         height: 80px;
     }
@@ -46,6 +46,7 @@
         display: block;
         margin-bottom: 120px;
         color: #4B5D68;
+    
     }
 
     .hamb {
@@ -106,6 +107,9 @@
 
     #side-menu:checked~.header__nav {
         max-height: 100%;
+    }
+    .header__buttons{
+        display: none;
     }
 }
 

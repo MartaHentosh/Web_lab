@@ -4,6 +4,7 @@
         margin-left: 0;
         margin-right: 0;
         padding: 20px;
+        /* width: 320px; */
     }
 
     .footer__top {
@@ -31,7 +32,7 @@
 @media screen and (min-width: 2560px) {
     .footer {
         max-width: 2560px;
-        margin-right: 300px;
+        /* margin-right: 300px; */
     }
 
     .footer__buttons {
@@ -40,14 +41,15 @@
     }
 
     .footer__line {
-        width: 75%;
+        width: 65%;
+        margin-right: 411px;
     }
 
     .footer__logo {
-        margin-left: 117px;
+        margin-left: 150px;
     }
 
     .footer__text {
-        margin-right: 75px;
+        margin-right: 388px;
     }
 }
