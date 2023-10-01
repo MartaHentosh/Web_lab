@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Third lab</title>
+
+    <link rel="stylesheet" href="./css/custom.css" />
+
+    <!-- Bootstrap 5 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+
+    <!-- UUID library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.2.0/uuid.min.js"></script>
+</head>
+
+<body class="">
+    <header>
+        <h1>Fridges</h1>
+        <div class="container header__container">
+            <a class="" href="">My fridges</a>
+            <a class="" href="">Create fridge</a>
+        </div>
+        <div class="">
+            <input type="text" class="form-control" id="name_input" placeholder="Type something" />
+        </div>
+        <div>
+            <button>Search</button>
+            <button>Clear</button>
+        </div>
+    </header>
+    <container>
+        <div class="container p-3">
+            <div class="row">
+              <div class="col-md-3 mt-2">
+                <form id="add_form" class="bg-light">
+                  <h3 class="mb-3">Manage Fridges</h3>
+                  <div class="mb-3">
+                    <label id="search_label" class="form-label">
+                      Sort by the most
+                      expensive stones </label>
+                    <label class="switch">
+                      <input type="checkbox">
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+                  <div class="mb-3">
+                    <div class="horizontal_block"></div>
+                  </div>
+                  <div class="mb-3">
+                    <label id="count_label" class="form-label">Count total daily expenses:</label>
+                  </div>
+                  <div class="mb-3">
+                    <button id="count_button" type="button" class="btn btn-primary">
+                      Count
+                    </button>
+                  </div>
+                  <div class="mb-3">
+                    <label id="count_result_label" class="count_result_label">Total expenses:</label>
+                  </div>
+                </form>
+              </div>
+
+    </container>
+    <script type="module" src="./js/index.js"></script>
+</body>
+
+</html>
