@@ -6,67 +6,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Third lab</title>
 
-    <link rel="stylesheet" href="./css/custom.css" />
-
-    <!-- Bootstrap 5 -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
-        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous" />
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
-        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
-        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
 
     <!-- UUID library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.2.0/uuid.min.js"></script>
 </head>
 
 <body class="">
-    <header>
-        <h1>Fridges</h1>
-        <div class="container header__container">
-            <a class="" href="">My fridges</a>
-            <a class="" href="">Create fridge</a>
-        </div>
-        <div class="">
-            <input type="text" class="form-control" id="name_input" placeholder="Type something" />
-        </div>
-        <div>
-            <button>Search</button>
-            <button>Clear</button>
-        </div>
-    </header>
-    <container>
-        <div class="container p-3">
-            <div class="row">
-              <div class="col-md-3 mt-2">
-                <form id="add_form" class="bg-light">
-                  <h3 class="mb-3">Manage Fridges</h3>
-                  <div class="mb-3">
-                    <label id="search_label" class="form-label">
-                      Sort by the most
-                      expensive stones </label>
-                    <label class="switch">
-                      <input type="checkbox">
-                      <span class="slider round"></span>
-                    </label>
-                  </div>
-                  <div class="mb-3">
-                    <div class="horizontal_block"></div>
-                  </div>
-                  <div class="mb-3">
-                    <label id="count_label" class="form-label">Count total daily expenses:</label>
-                  </div>
-                  <div class="mb-3">
-                    <button id="count_button" type="button" class="btn btn-primary">
-                      Count
-                    </button>
-                  </div>
-                  <div class="mb-3">
-                    <label id="count_result_label" class="count_result_label">Total expenses:</label>
-                  </div>
-                </form>
-              </div>
+        <header id="header" class="header">
+            <h1 class="header__title">Fridges</h1>
+            <a id="my_fridges" class="header__link" href="#">My fridges</a>
+            <a id="create_fridges" class="header__link" href="#">Create fridge</a>
+            <div>
+                <input id="search_input" type="text" class="form-control" placeholder="Type something" />
+            </div>
+            <div>
+                <button id="search_button" type="button" class="header__button">Search</button>
+                <button id="clear_find_button" type="button" class="header__button">Clear</button>
+            </div>
 
-    </container>
+        </header>
+    <div class="middle">
+        <div class="container side__container">
+            <div class="row">
+                <div class="side__inner">
+                    <form id="add_form" class="side__form">
+                        <h3 class="side__title">Manage Fridges</h3>
+                        <div class="side__items">
+                            <label id="search_label" class="form-label">
+                                Sort by the most
+                                expensive fridges</label>
+                            <br><label class="switch">
+                                <input id="sort_switch" type="checkbox">
+                                <span class="slider round"></span>
+                            </label></br>
+                        </div>
+                        <div class="horizontal__line">
+                        </div>
+                        <div class="">
+                            <label id="count_label" class="form-label">Count total daily expenses:</label>
+                        </div>
+                        <div class="m">
+                            <button id="count_button" type="button" class="count__button">
+                                Count
+                            </button>
+                        </div>
+                        <div class="">
+                            <label id="count_result_label" class="count__result">Total expenses:</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>        
+                <div id="items_container">
+                <div class="item__blocks">
+                    <div class="item__block">
+                        <img class="item__images" src="images/fridge.jpg" alt="">
+                        <p class="item__paragraph">Fridge Samsung</p>
+                        <p class="item__description">The refrigerator is made in a stylish modern design in silver color. 
+                            It is controlled by an electronic system, and all the necessary information is displayed on the external display.</p>
+                            <div class="item__price">2200$</div>
+                            <div class="edit-remove__buttons">
+                              <input class="edit__button" type="button" value="Edit"> <input class="remove__button" type="button" value="Remove">
+                            </div>
+                    </div>
+                    <div class="item__block">
+                        <img class="item__images" src="images/fridge2.jpg" alt="">
+                        <p class="item__paragraph">Fridge Samsung</p>
+                        <p class="item__description">The Samsung No Frost function prevents the formation of ice and frost on the walls of the refrigerator. 
+                            Now you can store your products at the most optimal temperature.</p>
+                            <div class="item__price">3000$</div>
+                            <div class="edit-remove__buttons">
+                              <input class="edit__button" type="button" value="Edit"> <input class="remove__button" type="button" value="Remove">
+                            </div>
+                    </div>
+                    <div class="item__block">
+                        <img class="item__images" src="images/freezer.jpg" alt="">
+                        <p class="item__paragraph">Freezer Gorenje</p>
+                        <p class="item__description">This freezer will be the perfect choice for everyone. Combining high power
+                             and the best cold technologies, it will ensure efficient and fast freezing of products</p>
+                             <div class="item__price">900$</div>
+                             <div class="edit-remove__buttons">
+                               <input class="edit__button" type="button" value="Edit"> <input class="remove__button" type="button" value="Remove">
+                             </div>
+                    </div>
+                    <div class="item__block">
+                        <img class="item__images" src="images/minibar.jpg" alt="">
+                        <p class="item__paragraph">Minibar system Primo</p>
+                        <p class="item__description">Silent, thanks to the absence of a compressor and an environmentally friendly minibar 
+                            with absorption properties and an improved cooling management system.</p>
+                            <div class="item__price">500$</div>
+                            <div class="edit-remove__buttons">
+                              <input class="edit__button" type="button" value="Edit"> <input class="remove__button" type="button" value="Remove">
+                            </div>
+                    </div>
+                    <div class="item__block">
+                        <img class="item__images" src="images/winefridge.jpg" alt="">
+                        <p class="item__paragraph">Winefridge ARDESTO</p>
+                        <p class="item__description">A wine cabinet for 34 bottles with touch control panel, 
+                            LED lighting, as well as a notification system in case the door is left open for a long time and the temperature 
+                            deviates from the norm.</p>
+                            <div class="item__price">600$</div>
+                            <div class="edit-remove__buttons">
+                              <input class="edit__button" type="button" value="Edit"> <input class="remove__button" type="button" value="Remove">
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     <script type="module" src="./js/index.js"></script>
 </body>
 
