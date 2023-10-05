@@ -1,4 +1,4 @@
-import { toggleSort, searchItems, countTotalExpenses } from './dom_util.js';
+import { toggleSort, searchItems, countTotalExpenses, setCountButtonClicked } from './dom_util.js';
 
 function createItem(imageSrc, title, description, price) {
     const itemBlock = document.createElement('div');
@@ -102,5 +102,10 @@ document.addEventListener('DOMContentLoaded', function () {
         searchItems();
     });
 
-    countButton.addEventListener('click', countTotalExpenses);
+    countButton.addEventListener('click', function () {
+        setCountButtonClicked();
+        countTotalExpenses();
+    });
+
+    countTotalExpenses();
 });

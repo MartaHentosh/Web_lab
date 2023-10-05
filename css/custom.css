@@ -42,11 +42,22 @@
 }
 
 .count__button {
+    width: 100px;
+    height: 30px;
+    font-size: 15px;
+    border-radius: 8px;
+    /* border: 1px solid #16425f; */
+    background-color: #fff;
+    color: #173950;
+    margin-right: 5px;
+    font-family:Arial;
+    font-weight: 500;
     margin-top: 5px;
+    cursor: pointer;
 }
 
 .count__result {
-    margin-top: 10px;
+    margin-top: 13px;
     color: rgb(92, 90, 90);
 }
 
