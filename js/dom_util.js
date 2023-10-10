@@ -1,12 +1,12 @@
-let initialOrder = [];
+let itemsData = [];
 
 export function toggleSort() {
     const itemsContainer = document.getElementById('items_container');
     const sortSwitch = document.getElementById('sort_switch');
     let itemBlocks = Array.from(itemsContainer.querySelectorAll('.item__block'));
 
-    if (initialOrder.length === 0) {
-        initialOrder = [...itemBlocks];
+    if (itemsData.length === 0) {
+        itemsData = [...itemBlocks];
     }
 
     if (sortSwitch.checked) {
@@ -16,7 +16,7 @@ export function toggleSort() {
             return priceB - priceA;
         });
     } else {
-        itemBlocks = [...initialOrder];
+        itemBlocks = [...itemsData];
     }
     
     while (itemsContainer.firstChild) {
@@ -32,13 +32,16 @@ export function searchItems() {
 
     itemBlocks.forEach((item) => {
         const itemName = item.querySelector('.item__paragraph').textContent.toLowerCase();
-        if (itemName.includes(searchInput)) {
+        const itemDescription = item.querySelector('.item__description').textContent.toLowerCase();
+        
+        if (itemName.includes(searchInput) || itemDescription.includes(searchInput)) {
             item.style.display = 'block';
         } else {
             item.style.display = 'none';
         }
     });
 }
+
 
 let isCountButtonClicked = false;
 

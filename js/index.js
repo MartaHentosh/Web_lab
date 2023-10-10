@@ -86,8 +86,16 @@ itemsData.forEach(item => {
     itemsContainer.appendChild(newItem);
 });
 
-
 document.addEventListener('DOMContentLoaded', function () {
+    const newItemData = JSON.parse(localStorage.getItem('newItemData'));
+
+    if (newItemData) {
+        const newItem = createItem('', newItemData.title, newItemData.description, newItemData.price);
+        const itemsContainer = document.getElementById('items_container');
+        itemsContainer.appendChild(newItem);
+
+        localStorage.removeItem('newItemData');
+    }
     const sortSwitch = document.getElementById('sort_switch');
     const searchButton = document.getElementById('search_button');
     const clearFindButton = document.getElementById('clear_find_button');
@@ -109,3 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     countTotalExpenses();
 });
+
+
+
+

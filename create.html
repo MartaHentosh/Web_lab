@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fourth lab</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- UUID library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.2.0/uuid.min.js"></script>
+</head>
+<body>
+<h>Create fridge</h>
+<form id="typeForm" action="process-form.php" method="POST">
+    <label for="title_label">Title:</label>
+    <select id="title" name="title">
+        <option value="fridge">Fridge</option>
+        <option value="winefridge">Winefridge</option>
+        <option value="freezer">Freezer</option>
+        <option value="minibar">Minibar</option>
+    </select>
+</form>
+<p>Description</p><input id="description" type="text" class="form-control" placeholder="" />
+<p>Daily expense ($)</p>
+<div class="number-container">
+    <input type="number" id="price" class="form-control" placeholder="0" />
+    <div class="arrow-buttons">
+    </div>
+</div>
+
+
+<button id="submit_button" type="submit">Submit</button>
+
+<script type="module" src="js/create.js"></script>
+</body>
+</html>
