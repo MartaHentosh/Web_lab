@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit fridge</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- UUID library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.2.0/uuid.min.js"></script>
+</head>
+<body>
+<h1>Edit fridge</h1>
+<form id="typeForm" action="process-form.php" method="POST">
+    <label for="title_label">Title:</label>
+    <input id="title" type="text" class="form-control" placeholder="" />
+
+<p>Description</p>
+<input id="description" type="text" class="form-control" placeholder="" />
+<p>Daily expense ($)</p>
+<input id="price"  type="text" class="form-control" placeholder="" />
+<button id="save_button" type="button">Save</button>
+
+<script type="module" src="js/edit.js"></script>
+</form>
+</body>
+</html>
