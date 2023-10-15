@@ -20,7 +20,8 @@
 <p>Description</p>
 <input id="description" type="text" class="form-control" placeholder="" />
 <p>Daily expense ($)</p>
-<input id="price"  type="text" class="form-control" placeholder="" />
+<input id="price"  type="number" class="form-control" placeholder="0" min="0" />
+<p id="error_message" style="color:red;"></p>
 <button id="save_button" type="button">Save</button>
 
 <script type="module" src="js/edit.js"></script>

@@ -40,10 +40,8 @@ function createItem(imageSrc, title, description, price, index) {
 
     removeButton.addEventListener('click', function() {
         if (window.confirm('Are you sure you want to remove this item?')) {
-            // Remove the item from the DOM
             itemBlock.remove();
 
-            // Remove the item from localStorage
             const itemsData = JSON.parse(localStorage.getItem('itemsData'));
             itemsData.splice(index, 1);
             localStorage.setItem('itemsData', JSON.stringify(itemsData));
@@ -70,31 +68,31 @@ document.addEventListener('DOMContentLoaded', function () {
             imageSrc: 'images/fridge.jpg',
             title: 'Fridge Samsung',
             description: 'The refrigerator is made in a stylish modern design in silver color. It is controlled by an electronic system, and all the necessary information is displayed on the external display.',
-            price: '2200$'
+            price: '2200'
         },
         {
             imageSrc: 'images/fridge2.jpg',
             title: 'Fridge Samsung',
             description: 'The Samsung No Frost function prevents the formation of ice and frost on the walls of the refrigerator. Now you can store your products at the most optimal temperature.',
-            price: '3000$'
+            price: '3000'
         },
         {
             imageSrc: 'images/freezer.jpg',
             title: 'Freezer Gorenje',
             description: 'This freezer will be the perfect choice for everyone. Combining high power and the best cold technologies, it will ensure efficient and fast freezing of products',
-            price: '900$'
+            price: '900'
         },
         {
             imageSrc: 'images/minibar.jpg',
             title: 'Minibar system Primo',
             description: 'Silent, thanks to the absence of a compressor and an environmentally friendly minibar with absorption properties and an improved cooling management system.',
-            price: '500$'
+            price: '500'
         },
         {
             imageSrc: 'images/winefridge.jpg',
             title: 'Winefridge ARDESTO',
             description: 'A wine cabinet for 34 bottles with touch control panel, LED lighting, as well as a notification system in case the door is left open for a long time and the temperature deviates from the norm.',
-            price: '600$'
+            price: '600'
         }
     ];
 
