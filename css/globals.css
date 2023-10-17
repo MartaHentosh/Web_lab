@@ -11,8 +11,8 @@
 }
 
 .container {
-    /* margin: 0 auto; */
-    max-width: 1220px;
+    margin: 0 auto;
+    /* max-width: 1220px; */
 }
 
 .header__nav-link-first {

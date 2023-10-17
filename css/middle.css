@@ -2,13 +2,13 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background: #F8F8F8;
-    margin-left: 197px;
-    height: 774px;
+    background-color: #F8F8F8;
+    /* margin-left: 197px; */
 }
 
 .middle__inner {
     width: 450px;
+    margin-left: 80px;
 }
 
 .middle__tittle {

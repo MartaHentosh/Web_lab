@@ -1,13 +1,28 @@
 .header {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
     margin-top: 27px;
-    margin-left: 197px;
+    margin-left: 15px;
+    /* width: 1200px; */
 }
 
 .header__nav ul {
     display: flex;
+    margin-left: 145px;
+}
+
+.header__nav-item {
+    margin-right: 35px;
+    /* margin-left: 45px; */
+}
+
+.header__logo {
+    align-self: center;
+    margin-left: 150px;
+}
+.header__buttons{
+    margin-left: 300px;
 }
 
 
@@ -30,7 +45,15 @@
     margin-right: 18px;
     font-family: "Inter";
     font-weight: 500;
+    animation: mymove 2s;
+
 }
+
+@keyframes mymove {
+    0%   {top: 0px; background: rgba(255, 0, 0, 0.551); width: 100px;}
+    50% {top: 200px; background: rgba(255, 255, 0, 0.566); width: 150px;}
+  }
+
 
 .register {
     width: 132px;
@@ -42,7 +65,20 @@
     color: #fff;
     font-family: "Inter";
     font-weight: 500;
+    animation: mymove2 2s;
 }
+
+@keyframes mymove2 {
+    50%   {top: 0px; background: rgba(255, 0, 0, 0.551); width: 100px;}
+    0% {top: 200px; background: rgba(255, 255, 0, 0.566); width: 150px;}
+  }
+
+input {
+    display: none;
+}
+/* .menu {
+    margin-right: 590px;
+}  */
 
 .header__buttons {
     margin-right: 18px;

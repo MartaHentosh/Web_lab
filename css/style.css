@@ -5,3 +5,8 @@
 @import url(middle.css);
 @import url(bottom.css);
 @import url(footer.css);
+@import "../adaptation/header_adaptive.css";
+@import "../adaptation/hero_adaptive.css";
+@import "../adaptation/middle_adaptive.css";
+@import "../adaptation/bottom_adaptive.css";
+@import "../adaptation/footer_adaptive.css";
