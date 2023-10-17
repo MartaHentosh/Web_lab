@@ -4,14 +4,11 @@
     flex-direction: column;
     background-color: #FFF;
     margin-left: 187px;
-    margin-right: 155px;
 }
 
 .bottom__top {
     display: flex;
     justify-content: space-between;
-    /* margin-right: 235px; */
-    /* padding-bottom: 20px; */
 }
 
 .bottom__title {
@@ -43,7 +40,6 @@
 }
 
 .bottom__blocks {
-    /* width: 300px; */
     display: flex;
     justify-content: space-between;
     flex-direction: row;

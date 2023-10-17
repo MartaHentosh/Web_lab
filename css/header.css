@@ -25,6 +25,15 @@
     margin-left: 300px;
 }
 
+
+.header__nav-item {
+    margin-right: 35px;
+}
+
+.header__nav-logo {
+    position: center;
+}
+
 .login {
     width: 132px;
     height: 44px;
@@ -44,6 +53,7 @@
     0%   {top: 0px; background: rgba(255, 0, 0, 0.551); width: 100px;}
     50% {top: 200px; background: rgba(255, 255, 0, 0.566); width: 150px;}
   }
+
 
 .register {
     width: 132px;
@@ -69,3 +79,7 @@ input {
 /* .menu {
     margin-right: 590px;
 }  */
+
+.header__buttons {
+    margin-right: 18px;
+}

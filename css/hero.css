@@ -10,7 +10,6 @@
      padding-bottom: 209px;
      width: 481px;
      /* flex: 1; */
-     padding-right: 80px;
  }
 
  .hero__title {
@@ -55,6 +54,17 @@
      padding: 12px 25px;
      text-decoration: none;
      border: 1px solid #FB8F1D;
+     width: 164px;
+     height: 48px;
+     border-radius: 8px;
+     border: none;
+     margin-top: 39px;
+     background-color: #FB8F1D;
+     color: #FFF;
+     font-family: Inter;
+     font-size: 16px;
+     font-weight: 600;
+     padding: 6px 0;
  }
 
  .hero__image {
