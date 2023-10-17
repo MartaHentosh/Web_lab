@@ -1,0 +1,68 @@
+let initialOrder = [];
+
+export function toggleSort() {
+    const itemsContainer = document.getElementById('items_container');
+    const sortSwitch = document.getElementById('sort_switch');
+    let itemBlocks = Array.from(itemsContainer.querySelectorAll('.item__block'));
+
+    if (initialOrder.length === 0) {
+        initialOrder = [...itemBlocks];
+    }
+
+    if (sortSwitch.checked) {
+        itemBlocks.sort((a, b) => {
+            const priceA = parseFloat(a.querySelector('.item__price').textContent.replace('$', ''));
+            const priceB = parseFloat(b.querySelector('.item__price').textContent.replace('$', ''));
+            return priceB - priceA;
+        });
+    } else {
+        itemBlocks = [...initialOrder];
+    }
+    
+    while (itemsContainer.firstChild) {
+        itemsContainer.removeChild(itemsContainer.firstChild);
+    }
+
+    itemBlocks.forEach((item) => itemsContainer.appendChild(item));
+}
+
+export function searchItems() {
+    const searchInput = document.getElementById('search_input').value.toLowerCase();
+    const itemBlocks = Array.from(document.querySelectorAll('.item__block'));
+
+    itemBlocks.forEach((item) => {
+        const itemName = item.querySelector('.item__paragraph').textContent.toLowerCase();
+        if (itemName.includes(searchInput)) {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+
+let isCountButtonClicked = false;
+
+export function countTotalExpenses() {
+    const searchInput = document.getElementById('search_input');
+    const isSearching = searchInput.value.trim() !== '';
+
+    const itemBlocks = Array.from(document.querySelectorAll('.item__block'));
+    let totalExpenses = 0;
+
+    itemBlocks.forEach((item) => {
+        if (!isSearching || item.style.display === 'block') {
+            const price = parseFloat(item.querySelector('.item__price').textContent.replace('$', ''));
+            totalExpenses += price;
+        }
+    });
+
+    if (isCountButtonClicked) {
+        const countResultLabel = document.getElementById('count_result_label');
+        countResultLabel.textContent = `Total expenses: $${totalExpenses}`;
+    }
+}
+
+export function setCountButtonClicked() {
+    isCountButtonClicked = true;
+}
+

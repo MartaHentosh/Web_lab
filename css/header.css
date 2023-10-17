@@ -1,85 +1,49 @@
 .header {
+    background-color: white;
     display: flex;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     align-items: center;
-    margin-top: 27px;
-    margin-left: 15px;
-    /* width: 1200px; */
+    height: 80px;
+
+    /* margin-top: 27px; */
+    /* margin-left: 197px; */
 }
 
-.header__nav ul {
+.header__title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    color: rgb(132, 130, 130);
+    margin-left: 11px;
+}
+
+.header__link {
+    text-decoration: none;
+    color: black;
+    /* margin-left: 280px; */
+}
+.form-control {
     display: flex;
-    margin-left: 145px;
+    justify-content: right;
+    /* max-width: 450px;
+    min-width: 120px;
+    max-height: 24px; */
+    height: 30px;
+    width: 200px;
+    margin-left: 315px;
+    margin-top: 5px;
 }
 
-.header__nav-item {
-    margin-right: 35px;
-    /* margin-left: 45px; */
-}
-
-.header__logo {
-    align-self: center;
-    margin-left: 150px;
-}
-.header__buttons{
-    margin-left: 300px;
-}
-
-
-.header__nav-item {
-    margin-right: 35px;
-}
-
-.header__nav-logo {
-    position: center;
-}
-
-.login {
-    width: 132px;
-    height: 44px;
+.header__button {
+    width: 100px;
+    height: 30px;
     font-size: 15px;
     border-radius: 8px;
-    border: 1px solid #FB8F1D;
+    border: 1px solid #16425f;
     background-color: #fff;
-    color: #FB8F1D;
-    margin-right: 18px;
-    font-family: "Inter";
+    color: #173950;
+    margin-right: 5px;
+    font-family:Arial;
     font-weight: 500;
-    animation: mymove 2s;
-
-}
-
-@keyframes mymove {
-    0%   {top: 0px; background: rgba(255, 0, 0, 0.551); width: 100px;}
-    50% {top: 200px; background: rgba(255, 255, 0, 0.566); width: 150px;}
-  }
-
-
-.register {
-    width: 132px;
-    height: 44px;
-    font-size: 15px;
-    border-radius: 8px;
-    border: none;
-    background-color: #FB8F1D;
-    color: #fff;
-    font-family: "Inter";
-    font-weight: 500;
-    animation: mymove2 2s;
-}
-
-@keyframes mymove2 {
-    50%   {top: 0px; background: rgba(255, 0, 0, 0.551); width: 100px;}
-    0% {top: 200px; background: rgba(255, 255, 0, 0.566); width: 150px;}
-  }
-
-input {
-    display: none;
-}
-/* .menu {
-    margin-right: 590px;
-}  */
-
-.header__buttons {
-    margin-right: 18px;
+    margin-top: 5px;
+    cursor: pointer;
 }

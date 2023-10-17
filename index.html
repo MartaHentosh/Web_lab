@@ -2,163 +2,117 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First laboratory</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Third lab</title>
 
-    <!-- My fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap"
-        rel="stylesheet">
-
-    <!-- My style -->
     <link rel="stylesheet" href="css/style.css">
 
+    <!-- UUID library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.2.0/uuid.min.js"></script>
 </head>
 
-<body>
-    <section class="hero">
-        <div class="container header__container">
-            <header class="header">
-                <input class="side-menu" type="checkbox" id="side-menu" />
-                <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
-                <nav class="header__nav">
-                    <ul class="menu">
-                        <li class="header__nav-item">
-                            <a class="header__nav-link-first" href="">Home</a>
-                        </li>
-                        <li class="header__nav-item">
-                            <a class="header__nav-link" href="">Destinations</a> 
-                        </li>
-                        <li class="header__nav-item">
-                            <a class="header__nav-link" href="">About</a>
-                        </li>
-                        <li class="header__nav-item">
-                            <a class="header__nav-link" href="">Partner</a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="header__logo">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none">
-                        <circle cx="20.5" cy="20.5" r="20.5" fill="#1ABE84" />
-                        <circle cx="20.5" cy="20.5" r="9" fill="#FB8F1D" stroke="white" stroke-width="3" />
-                    </svg>
-                </div>
-                <div class="header__buttons">
-                    <button class="login">Login</button>
-                    <button class="register">Register</button>
-                </div>
-            </header>
+<body class="">
+    <header id="header" class="header">
+        <h1 class="header__title">Fridges</h1>
+        <a id="my_fridges" class="header__link" href="#">My fridges</a>
+        <a id="create_fridges" class="header__link" href="#">Create fridge</a>
+        <div>
+            <input id="search_input" type="text" class="form-control" placeholder="Type something" />
         </div>
-        <div class="container hero__container">
-            <div class="hero__inner">
-                <h1 class="hero__title">Guides by Thousand Sunny</h1>
-                <p class="hero__paragraph">Packed with tips and advice from our on-the-ground
-                <br>experts, our city guides app (iOS and Android) is the
-                <br>ultimate resource before and during a trip.</p>
-                <div>
-                    <a href="">
-                        <button class="hero__button">Download</button>
-                        </a>
-                </div>
-            </div>
-            <img class="hero__image" src="images/1.png" alt="Image 1">
+        <div>
+            <button id="search_button" type="button" class="header__button">Search</button>
+            <button id="clear_find_button" type="button" class="header__button">Clear</button>
         </div>
-    </section>
-    <section class="middle">
-        <div class="container middle__container">
-            <div class="middle__inner">
-                <h1 class="middle__title">Testimonials</h1>
-                <div class="middle__star">
-                    <img class="middle__image-star" src="images/star.png" alt="Stars">
-                    <img class="middle__image-star" src="images/star.png" alt="Stars">
-                    <img class="middle__image-star" src="images/star.png" alt="Stars">
-                    <img class="middle__image-star" src="images/star.png" alt="Stars">
-                    <img class="middle__image-star" src="images/star.png" alt="Stars">
-                </div>
-                <p class="middle__paragraph">“Quisque in lacus a urna fermentum
-                    Integer mi nibh, dapibus ac
-                    scelerisque eu, facilisis quis purus. Morbi
-                    blandit sit amet turpis nec”</p>
-                <p class="middle__paragraph-name">Edward Newgate</p>
-                <p class="middle__paragraph-founder">Founder Circle</p>
-            </div>
-            <img class="middle__image" src="images/2.png" alt="Image 2">
-        </div>
-    </section>
-    <section class="bottom">
-        <div class="container bottom__container">
-            <div class="bottom__top">
-                <h1 class="bottom__title">Trending stories</h1>
-                <a href="" class="bottom__view-all">View all
-                    <img class="bottom__vector" src="images/Vector 4.svg" alt="">
-                </a>
-            </div>
-            <div class="bottom__blocks">
-                <div class="bottom__block">
-                    <img class="bottom__images" src="images/3.png" alt="">
-                    <p class="bottom__paragraph">The many benefits of taking a healing holiday</p>
-                    <p class="bottom__description">`Helaing holidays` are on the rise to help maximise your health 
-                        <br>and happines...</br></p>
-                    <a href="" class="bottom__read-more">Read more</a>
-                </div>
-                <div class="bottom__block">
-                    <img class="bottom__images" src="images/4.png" alt="">
-                    <p class="bottom__paragraph">The best Kyoto restaurant to try Japanese food</p>
-                    <p class="bottom__description">From tofu to teahouses, here`s our guide to Kyoto`s best restaurants
-                        <br>to visit...</br></p>
-                    <a href="" class="bottom__read-more">Read more</a>
-                </div>
-                <div class="bottom__block">
-                    <img class="bottom__images" src="images/5.png" alt="">
-                    <p class="bottom__paragraph">Skip Chichen Itza and head to this remote Yucatan</p>
-                    <p class="bottom__description">It`s remote and challenging to get, but braving the jungle and
-                        exploring these ruins
-                        without the...</p>
-                    <a href="" class="bottom__read-more">Read more</a>
-                </div>
-                <div class="bottom__block">
-                    <img class="bottom__images" src="images/6.png" alt="">
-                    <p class="bottom__paragraph">Surf`s up at these beginner spots around the world</p>
-                    <p class="bottom__description">If learning to surf has in on your to-do list for a while, the good news is: 
-                        <br>it`s never too late...</br></p>
 
-                    <a href="" class="bottom__read-more">Read more</a>
+    </header>
+    <div class="middle">
+        <div class="container side__container">
+            <div class="row">
+                <div class="side__inner">
+                    <form id="add_form" class="side__form">
+                        <h3 class="side__title">Manage Fridges</h3>
+                        <div class="side__items">
+                            <label id="search_label" class="form-label">
+                                Sort by the most
+                                expensive fridges</label>
+                            <br><label class="switch">
+                                <input id="sort_switch" type="checkbox">
+                                <span class="slider round"></span>
+                            </label></br>
+                        </div>
+                        <div class="horizontal__line">
+                        </div>
+                        <div class="count__label">
+                            <label id="count_label" class="form-label">Count total daily expenses:</label>
+                        </div>
+                        <div class="count__button">
+                            <button id="count_button" type="button" class="count__button">
+                                Count
+                            </button>
+                        </div>
+                        <div class="count__result">
+                            <label id="count_result_label" class="count__result">Total expenses:</label>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-    </section>
-    <footer class="footer">
-        <div class="footer__top">
-            <div class="footer__logo">
-                <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none">
-                    <circle cx="20.5" cy="20.5" r="20.5" fill="#1ABE84" />
-                    <circle cx="20.5" cy="20.5" r="9" fill="#FB8F1D" stroke="white" stroke-width="3" />
-                </svg>
-            </div>
-            <div class="footer__text">©2020 Thousand Sunny. All rights reserved</div>
+        <div id="items_container">
+            <!-- <div class="item__blocks">
+                    <div class="item__block">
+                        <img class="item__images" src="images/fridge.jpg" alt="">
+                        <p class="item__paragraph">Fridge Samsung</p>
+                        <p class="item__description">The refrigerator is made in a stylish modern design in silver color. 
+                            It is controlled by an electronic system, and all the necessary information is displayed on the external display.</p>
+                            <div class="item__price">2200$</div>
+                            <div class="edit-remove__buttons">
+                              <input class="edit__button" type="button" value="Edit"> <input class="remove__button" type="button" value="Remove">
+                            </div>
+                    </div>
+                    <div class="item__block">
+                        <img class="item__images" src="images/fridge2.jpg" alt="">
+                        <p class="item__paragraph">Fridge Samsung</p>
+                        <p class="item__description">The Samsung No Frost function prevents the formation of ice and frost on the walls of the refrigerator. 
+                            Now you can store your products at the most optimal temperature.</p>
+                            <div class="item__price">3000$</div>
+                            <div class="edit-remove__buttons">
+                              <input class="edit__button" type="button" value="Edit"> <input class="remove__button" type="button" value="Remove">
+                            </div>
+                    </div>
+                    <div class="item__block">
+                        <img class="item__images" src="images/freezer.jpg" alt="">
+                        <p class="item__paragraph">Freezer Gorenje</p>
+                        <p class="item__description">This freezer will be the perfect choice for everyone. Combining high power
+                             and the best cold technologies, it will ensure efficient and fast freezing of products</p>
+                             <div class="item__price">900$</div>
+                             <div class="edit-remove__buttons">
+                               <input class="edit__button" type="button" value="Edit"> <input class="remove__button" type="button" value="Remove">
+                             </div>
+                    </div>
+                    <div class="item__block">
+                        <img class="item__images" src="images/minibar.jpg" alt="">
+                        <p class="item__paragraph">Minibar system Primo</p>
+                        <p class="item__description">Silent, thanks to the absence of a compressor and an environmentally friendly minibar 
+                            with absorption properties and an improved cooling management system.</p>
+                            <div class="item__price">500$</div>
+                            <div class="edit-remove__buttons">
+                              <input class="edit__button" type="button" value="Edit"> <input class="remove__button" type="button" value="Remove">
+                            </div>
+                    </div>
+                    <div class="item__block">
+                        <img class="item__images" src="images/winefridge.jpg" alt="">
+                        <p class="item__paragraph">Winefridge ARDESTO</p>
+                        <p class="item__description">A wine cabinet for 34 bottles with touch control panel, 
+                            LED lighting, as well as a notification system in case the door is left open for a long time and the temperature 
+                            deviates from the norm.</p>
+                            <div class="item__price">600$</div>
+                            <div class="edit-remove__buttons">
+                              <input class="edit__button" type="button" value="Edit"> <input class="remove__button" type="button" value="Remove">
+                            </div> -->
         </div>
-        <div class="footer__line"></div>
-        <div class="footer__buttons">
-            <a href="" class="twitter">
-                <img class="" src="images/twitter.png" alt="">
-            </a>
-            <a href="" class="facebook">
-                <img class="" src="images/facebook.png" alt="">
-            </a>
-            <a href="" class="instagram">
-                <img class="" src="images/insta.png" alt="">
-            </a>
-            <a href="" class="linkedin">
-                <img class="" src="images/linkedin.png" alt="">
-            </a>
-            <a href="" class="youtube">
-                <img class="" src="images/youtube.png" alt="">
-            </a>
-        </div>
-    </footer>
+    </div>
+    <script type="module" src="./js/index.js"></script>
 </body>
 
 </html>
