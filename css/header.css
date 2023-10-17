@@ -1,0 +1,49 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 27px;
+    margin-left: 197px;
+}
+
+.header__nav ul {
+    display: flex;
+}
+
+
+.header__nav-item {
+    margin-right: 35px;
+}
+
+.header__nav-logo {
+    position: center;
+}
+
+.login {
+    width: 132px;
+    height: 44px;
+    font-size: 15px;
+    border-radius: 8px;
+    border: 1px solid #FB8F1D;
+    background-color: #fff;
+    color: #FB8F1D;
+    margin-right: 18px;
+    font-family: "Inter";
+    font-weight: 500;
+}
+
+.register {
+    width: 132px;
+    height: 44px;
+    font-size: 15px;
+    border-radius: 8px;
+    border: none;
+    background-color: #FB8F1D;
+    color: #fff;
+    font-family: "Inter";
+    font-weight: 500;
+}
+
+.header__buttons {
+    margin-right: 18px;
+}
