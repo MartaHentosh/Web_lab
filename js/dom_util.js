@@ -1,12 +1,12 @@
-let initialOrder = [];
+let initialItemBlocks = [];
 
 export function toggleSort() {
     const itemsContainer = document.getElementById('items_container');
     const sortSwitch = document.getElementById('sort_switch');
     let itemBlocks = Array.from(itemsContainer.querySelectorAll('.item__block'));
 
-    if (initialOrder.length === 0) {
-        initialOrder = [...itemBlocks];
+    if (initialItemBlocks.length === 0) {
+        initialItemBlocks = [...itemBlocks];
     }
 
     if (sortSwitch.checked) {
@@ -16,13 +16,10 @@ export function toggleSort() {
             return priceB - priceA;
         });
     } else {
-        itemBlocks = [...initialOrder];
-    }
-    
-    while (itemsContainer.firstChild) {
-        itemsContainer.removeChild(itemsContainer.firstChild);
+        itemBlocks = [...initialItemBlocks];
     }
 
+    itemsContainer.innerHTML = ''; // Clear the container before reappending items
     itemBlocks.forEach((item) => itemsContainer.appendChild(item));
 }
 
@@ -32,11 +29,9 @@ export function searchItems() {
 
     itemBlocks.forEach((item) => {
         const itemName = item.querySelector('.item__paragraph').textContent.toLowerCase();
-        if (itemName.includes(searchInput)) {
-            item.style.display = 'block';
-        } else {
-            item.style.display = 'none';
-        }
+        const itemDescription = item.querySelector('.item__description').textContent.toLowerCase();
+
+        item.style.display = (itemName.includes(searchInput) || itemDescription.includes(searchInput)) ? 'block' : 'none';
     });
 }
 
@@ -50,7 +45,7 @@ export function countTotalExpenses() {
     let totalExpenses = 0;
 
     itemBlocks.forEach((item) => {
-        if (!isSearching || item.style.display === 'block') {
+        if (!isSearching || item.style.display !== 'none') {
             const price = parseFloat(item.querySelector('.item__price').textContent.replace('$', ''));
             totalExpenses += price;
         }
@@ -58,11 +53,10 @@ export function countTotalExpenses() {
 
     if (isCountButtonClicked) {
         const countResultLabel = document.getElementById('count_result_label');
-        countResultLabel.textContent = `Total expenses: $${totalExpenses}`;
+        countResultLabel.textContent = `Total expenses: $${totalExpenses.toFixed(2)}`; // Added toFixed for cleaner formatting
     }
 }
 
 export function setCountButtonClicked() {
     isCountButtonClicked = true;
 }
-
