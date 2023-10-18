@@ -1,6 +1,7 @@
 import { toggleSort, searchItems, countTotalExpenses, setCountButtonClicked } from './dom_util.js';
 
-function createItem(imageSrc, title, description, price, index) {
+function createItem(item, index) {
+    const { imageSrc, title, description, price } = item; // Destructure the item object
     const itemBlock = document.createElement('div');
     itemBlock.classList.add('item__block');
 
@@ -30,7 +31,7 @@ function createItem(imageSrc, title, description, price, index) {
     editButton.classList.add('edit__button');
     editButton.addEventListener('click', function () {
         const itemIndex = index;
-        window.location.href = `http://127.0.0.1:5501/edit.html?itemIndex=${itemIndex}`;
+        window.location.href = `http://127.0.0.1:3000/edit.html?itemIndex=${itemIndex}`;
     });
 
     const removeButton = document.createElement('input');
@@ -40,11 +41,21 @@ function createItem(imageSrc, title, description, price, index) {
 
     removeButton.addEventListener('click', function() {
         if (window.confirm('Are you sure you want to remove this item?')) {
+            // Remove the item from the DOM
             itemBlock.remove();
 
-            const itemsData = JSON.parse(localStorage.getItem('itemsData'));
-            itemsData.splice(index, 1);
-            localStorage.setItem('itemsData', JSON.stringify(itemsData));
+            // Delete the item from the server
+fetch(`http://localhost:3000/items/${index}`, {
+    method: 'DELETE',
+})
+.then(response => response.json())
+.then(data => {
+    console.log(data.message);  // Log the server's response message
+})
+.catch(error => {
+    console.error("Error deleting item: ", error);
+});
+
         }
     });
 
@@ -62,44 +73,19 @@ function createItem(imageSrc, title, description, price, index) {
 
 document.addEventListener('DOMContentLoaded', function () {
     const itemsContainer = document.getElementById('items_container');
-    
-    const itemsData = JSON.parse(localStorage.getItem('itemsData')) || [
-        {
-            imageSrc: 'images/fridge.jpg',
-            title: 'Fridge Samsung',
-            description: 'The refrigerator is made in a stylish modern design in silver color. It is controlled by an electronic system, and all the necessary information is displayed on the external display.',
-            price: '2200'
-        },
-        {
-            imageSrc: 'images/fridge2.jpg',
-            title: 'Fridge Samsung',
-            description: 'The Samsung No Frost function prevents the formation of ice and frost on the walls of the refrigerator. Now you can store your products at the most optimal temperature.',
-            price: '3000'
-        },
-        {
-            imageSrc: 'images/freezer.jpg',
-            title: 'Freezer Gorenje',
-            description: 'This freezer will be the perfect choice for everyone. Combining high power and the best cold technologies, it will ensure efficient and fast freezing of products',
-            price: '900'
-        },
-        {
-            imageSrc: 'images/minibar.jpg',
-            title: 'Minibar system Primo',
-            description: 'Silent, thanks to the absence of a compressor and an environmentally friendly minibar with absorption properties and an improved cooling management system.',
-            price: '500'
-        },
-        {
-            imageSrc: 'images/winefridge.jpg',
-            title: 'Winefridge ARDESTO',
-            description: 'A wine cabinet for 34 bottles with touch control panel, LED lighting, as well as a notification system in case the door is left open for a long time and the temperature deviates from the norm.',
-            price: '600'
-        }
-    ];
 
-    itemsData.forEach((item, index) => {
-        const newItem = createItem(item.imageSrc, item.title, item.description, item.price, index);
-        itemsContainer.appendChild(newItem);
-    });
+    // Fetch items data from the server
+    fetch('http://localhost:3000/items')
+        .then(response => response.json())
+        .then(itemsData => {
+            itemsData.forEach((item, index) => {
+                const newItem = createItem(item, index);
+                itemsContainer.appendChild(newItem);
+            });
+        })
+        .catch(error => {
+            console.error("Error fetching items: ", error);
+        });
 
     const sortSwitch = document.getElementById('sort_switch');
     const searchButton = document.getElementById('search_button');

@@ -19,7 +19,7 @@ export function toggleSort() {
         itemBlocks = [...initialItemBlocks];
     }
 
-    itemsContainer.innerHTML = ''; // Clear the container before reappending items
+    itemsContainer.innerHTML = '';
     itemBlocks.forEach((item) => itemsContainer.appendChild(item));
 }
 
@@ -53,7 +53,7 @@ export function countTotalExpenses() {
 
     if (isCountButtonClicked) {
         const countResultLabel = document.getElementById('count_result_label');
-        countResultLabel.textContent = `Total expenses: $${totalExpenses.toFixed(2)}`; // Added toFixed for cleaner formatting
+        countResultLabel.textContent = `Total expenses: $${totalExpenses.toFixed(2)}`;
     }
 }
 

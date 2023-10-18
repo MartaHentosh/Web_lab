@@ -2,29 +2,35 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit fridge</title>
-
     <link rel="stylesheet" href="css/style.css">
-
-    <!-- UUID library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.2.0/uuid.min.js"></script>
 </head>
+
 <body>
-<h1>Edit fridge</h1>
-<form id="typeForm" action="process-form.php" method="POST">
-    <label for="title_label">Title:</label>
-    <input id="title" type="text" class="form-control" placeholder="" />
+    <h1>Edit fridge</h1>
+    <form id="typeForm">
+        <label for="title_label">Title:</label>
+        <select id="title" name="title">
+            <option value="Fridge">Fridge</option>
+            <!-- <option value="Fridge Samsung">Fridge Samsung</option> -->
+            <option value="Winefridge">Winefridge</option>
+            <option value="Freezer">Freezer</option>
+            <option value="Minibar">Minibar</option>
+        </select>        
 
-<p>Description</p>
-<input id="description" type="text" class="form-control" placeholder="" />
-<p>Daily expense ($)</p>
-<input id="price"  type="number" class="form-control" placeholder="0" min="0" />
-<p id="error_message" style="color:red;"></p>
-<button id="save_button" type="button">Save</button>
+        <p>Description</p>
+        <textarea id="description" rows="5" class="form-control"></textarea>
 
-<script type="module" src="js/edit.js"></script>
-</form>
+        <p>Daily expense ($)</p>
+        <input id="price" type="number" class="form-control" placeholder="" min="0" />
+        <p id="error_message" style="color:red;"></p>
+
+        <button id="save_button" type="button">Save</button>
+    </form>
+
+    <script type="module" src="js/edit.js"></script>
 </body>
+
 </html>

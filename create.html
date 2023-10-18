@@ -2,38 +2,38 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create fridge</title>
-
     <link rel="stylesheet" href="css/style.css">
-
-    <!-- UUID library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.2.0/uuid.min.js"></script>
 </head>
+
 <body>
-<h>Create fridge</h>
-<form id="typeForm" action="process-form.php" method="POST">
-    <label for="title_label">Title:</label>
-    <select id="title" name="title">
-        <option value="fridge">Fridge</option>
-        <option value="winefridge">Winefridge</option>
-        <option value="freezer">Freezer</option>
-        <option value="minibar">Minibar</option>
-    </select>
+    <h1>Create fridge</h1>
+    <form id="typeForm">
+        <label for="title_label">Title:</label>
+        <select id="title" name="title">
+            <option value="Fridge">Fridge</option>
+            <option value="Winefridge">Winefridge</option>
+            <option value="Freezer">Freezer</option>
+            <option value="Minibar">Minibar</option>
+        </select>  
 
-<p>Description</p><input id="description" type="text" class="form-control" placeholder="" />
-<p>Daily expense ($)</p>
-<div class="number-container">
-    <input type="number" id="price" class="form-control" placeholder="0" min="0" />
-    <div class="arrow-buttons">
-    </div>
-</div>
+        <p>Description</p>
+        <input id="description" type="text" class="form-control" placeholder="" />
 
-<p id="error_message" style="color:red;"></p>
-<button id="save_button" type="submit">Save</button>
-</form>
+        <p>Daily expense ($)</p>
+        <div class="number-container">
+            <input type="number" id="price" class="form-control" placeholder="0" min="0" />
+            <div class="arrow-buttons"></div>
+        </div>
 
-<script type="module" src="js/create.js"></script>
+        <p id="error_message" style="color:red;"></p>
+
+        <button id="save_button" type="submit">Save</button>
+    </form>
+
+    <script type="module" src="js/create.js"></script>
 </body>
+
 </html>
