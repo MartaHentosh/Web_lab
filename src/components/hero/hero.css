@@ -1,0 +1,37 @@
+.hero {
+    margin-bottom: 40px;
+    height: 500px;
+    background: #F4F6F5 ;
+}
+
+.hero__content {
+    justify-content: center;
+    display: flex;
+    column-gap: 200px;
+}
+
+.hero__title {
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 2;
+    color: #156371;
+    margin-left: 50px;
+    margin-top: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.hero__paragraph {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #258798;
+    margin-top: 25px;
+    /* max-width: 650px; */
+    margin-left: 50px;
+}
+
+.hero__image {
+    margin-left: 80px;
+    margin-top: 70px;
+    border-radius: 50px;
+}

@@ -1,0 +1,19 @@
+.button {
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 140px;
+}
+
+.objects__button {
+    width: 170px;
+    height: 50px;
+    color: #258798;
+    border-radius: 50px;
+    border-color: #258798;
+    background-color: white;
+    cursor: pointer;
+}
+
+.objects__button:hover {
+    background-color: #d0e9ee;
+  }
