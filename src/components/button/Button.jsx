@@ -1,6 +1,7 @@
+import React from 'react';
 import './button.css'
 
-const Button = () => {
+function Button  () {
     return (
         <section className="button">
             <div className="container">

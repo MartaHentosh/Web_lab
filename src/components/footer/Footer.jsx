@@ -1,3 +1,4 @@
+import React from 'react';
 import './footer.css'
 import fridgelogoImg from "../../img/fridgelogo.svg";
 import facebookImg from "../../img/facebook.svg";

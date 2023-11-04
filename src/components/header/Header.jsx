@@ -1,4 +1,6 @@
+import React from 'react';
 import fridgelogoImg from '../../img/fridgelogo.svg'
+import { Link } from "react-router-dom";
 
 import './header.css'
 
@@ -9,13 +11,12 @@ function Header () {
                 <div className="header__row">
                     <div className="header__logo">
                         <img src={fridgelogoImg} alt="Logo" height={60} width={60}/>
-                        {/* <span>My Fridges</span> */}
                     </div>
                     <nav className="header__nav">
                         <ul>
-                            <li><a href="">Home</a></li>
-                            <li><a href="">Catalog</a></li>
-                            <li><a href="">Cart</a></li>
+                            <li><Link exact to="/Home">Home</Link></li>
+                            <li><Link exact to="/Catalog">Catalog</Link></li>
+                            <li><Link exact to="/Cart">Cart</Link></li>
                         </ul>
                     </nav>
                 </div>
