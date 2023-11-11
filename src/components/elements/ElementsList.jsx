@@ -12,10 +12,10 @@ const elementsData = [
     {
         id: 1,
         imgSrc: fridge1,
-        type: "Off White Fridge",
+        type: "Yellow Fridge",
         description: "Soft rounded curves combined with vibrant or pastel colours create real character in the kitchen.",
         brand: "Samsung",
-        price: 999,
+        price: 1500,
     },
 
     {
@@ -24,7 +24,7 @@ const elementsData = [
         type: "Yellow Fridge",
         description: "A new Samsung BESPOKE Fridge with custom panels allows you to customize type for your stylish design.",
         brand: "Samsung",
-        price: 2500,
+        price: 1900,
     },
 
     {
@@ -33,7 +33,7 @@ const elementsData = [
         type: "Multicolor Fridge",
         description: "Renovating your kitchen? Make sure the refrigerator fits your style too! Choose your color and buy it.",
         brand: "Philipes",
-        price: 1699,
+        price: 2699,
     },
 
     {
@@ -51,7 +51,7 @@ const elementsData = [
         type: "Black Fridge",
         description: "Family Hub is designed to store more of everything for the whole family with a modern look to match your kitchen style.",
         brand: "Philipes",
-        price: 850,
+        price: 2999,
     },
 
     {
@@ -60,7 +60,7 @@ const elementsData = [
         type: "Grey Fridge",
         description: "Reduce your food waste successfully with this inspiring, motivating post on How To Organize Your Fridge.",
         brand: "Samsung",
-        price: 800,
+        price: 3000,
     },
 ];
 
