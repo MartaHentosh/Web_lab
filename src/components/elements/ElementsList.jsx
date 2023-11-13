@@ -8,7 +8,7 @@ import fridge5 from './fridgeImages/fridge5.jpg'
 import fridge6 from './fridgeImages/fridge6.jpg'
 import './elementsList.css'
 
-const elementsData = [
+export const elementsData = [
     {
         id: 1,
         imgSrc: fridge1,
