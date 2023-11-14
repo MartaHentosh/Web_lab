@@ -1,10 +1,11 @@
-.button {
+.view-more{
     display: flex;
     margin-top: 50px;
     margin-bottom: 140px;
+    justify-content: center;
 }
 
-.objects__button {
+.info__button {
     width: 170px;
     height: 50px;
     color: #258798;
@@ -12,8 +13,9 @@
     border-color: #258798;
     background-color: white;
     cursor: pointer;
+    font-size: 20px;
 }
 
-.objects__button:hover {
+.info__button:hover {
     background-color: #d0e9ee;
   }

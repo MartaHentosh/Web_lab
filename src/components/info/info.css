@@ -4,11 +4,12 @@
 }
 
 .info__items {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 30px;
-    margin-right: 30px;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    justify-content: center;
+    /* align-items: center; */
+    margin-left: 150px;
+    margin-right: 50px;
 }
 
 .info__image {

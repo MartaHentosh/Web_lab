@@ -1,20 +1,14 @@
 import React from 'react';
-import './button.css'
+import './button.css';
 
-function Button  () {
+function Button({showMore, setShowMore}) {
     return (
-        <section className="button">
-            <div className="container">
-                <div className="button__position">
-                    <a href="#">
-                        <button className="objects__button" type="button" >
-                            VIEW MORE
-                        </button>
-                    </a>
-                </div>
-            </div>
-        </section>
-    );
+        <div className="view-more">
+          <button className="info__button" onClick={() => setShowMore(!showMore)}>
+            {showMore ? "Show Less" : "View More"}
+          </button>
+        </div>
+      );
 }
 
 export default Button;
