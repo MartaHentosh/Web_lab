@@ -65,35 +65,35 @@ export const elementsData = [
     },
   ];
 
-const Elements = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
-
-  const handleSearch = () => {
-    const results = elementsData.filter(
-      (element) =>
-        element.type.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        element.description.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setSearchResults(results);
-  };
-
-  return (
-    <section className="elements">
-      <div className='search__part'>
-        <label htmlFor="searchTerm"></label>
-        <input className='search'
-          type="text"
-          id="searchTerm"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder="Type"
-        />
-        <button className='search__button' onClick={handleSearch}>Search</button>
-      </div>
-      <div className="elements_list">
-        {(searchResults.length > 0 ? searchResults : elementsData).map((element) => (
-          <div className="elements__part" key={element.id}>
+  const Elements = ({ elementsData }) => {
+    const [searchTerm, setSearchTerm] = useState('');
+    const [searchResults, setSearchResults] = useState([]);
+  
+    const handleSearch = () => {
+      const results = elementsData.filter(
+        (element) =>
+          element.type.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          element.description.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setSearchResults(results);
+    };
+  
+    return (
+      <section className="elements">
+        <div className='search__part'>
+          <label htmlFor="searchTerm"></label>
+          <input className='search'
+            type="text"
+            id="searchTerm"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            placeholder="Type"
+          />
+          <button className='search__button' onClick={handleSearch}>Search</button>
+        </div>
+        <div className="elements_list">
+          {(searchResults.length > 0 ? searchResults : elementsData).map((element) => (
+            <div className="elements__part" key={element.id}>
             <img className="elements__image" src={element.imgSrc} alt={element.type} />
             <h3 className="elements__type">{element.type}</h3>
             <p className="elements__description">{element.description}</p>

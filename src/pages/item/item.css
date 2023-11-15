@@ -1,0 +1,93 @@
+.element {
+    height: 700px;
+}
+
+.element__content {
+    display: flex;
+}
+
+.element__container {
+    margin-left: 200px;
+    margin-top: 50px;
+}
+
+.element__image {
+    border-radius: 10px 10px 10px 10px;
+    transition: scale;
+    margin-bottom: 10px;
+    margin-left: 300px;
+    height: 500px;
+    width: 333.33px;
+}
+
+.element__image:hover {
+    transform: scale(1.1);
+}
+
+.element__type {
+    font-family: "Poppins-Medium";
+    font-size: 30px;
+    color: #156371;;
+}
+
+.element__description {
+    max-width: 333px;
+    font-family: "Poppins-Regural";
+    color: #258798;
+    font-size: 20px;
+}
+
+.element__brand {
+    /* margin-bottom: 10px; */
+    font-family: "Poppins-Regural";
+    font-size: 20px;
+}
+
+.element__price {
+    font-family: "Poppins-Medium";
+    font-size: 30px;
+    margin-bottom: 15px;
+    margin-left: 302px;
+}
+
+.element__button1 {
+    background-color: #fff;
+    font-size: 17px;
+    padding: 8px 16px;
+    border-color: #7A7A7A;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 12px;
+    font-family: "Poppins-Medium";
+    color:#7A7A7A;
+    margin-left: 465px;
+    margin-right: 30px;
+    margin-top: 20px; 
+}
+
+.element__button2 {
+    background-color: #7A7A7A;
+    color: #fff;
+    font-size: 17px;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 12px;
+    font-family: "Poppins-Medium";
+    margin-top: 20px;
+    border: 2px solid #7A7A7A;
+}
+
+.element__button2:hover {
+    background-color: #625f5f;
+}
+
+.element__footer {
+    display: flex;
+    margin-top: 40px;
+}
+
+.count__input {
+    width: 100px;
+}

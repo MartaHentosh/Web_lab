@@ -1,125 +1,75 @@
 import React, { useState } from 'react';
-import './catalogFilters.css';
-import Select from '../select/Select';
+import { ApplyButton, LabelPrice, LabelType, LabelBrand, FiltersAll } from "./CatalogFilter.styled.jsx";
+import "./catalogFilters.css"
 
-const CatalogFilters = () => {
-    const typeOptions = [
-        { value: "type", label: "Any type" },
-        { value: "type", label: "Yellow Fridge" },
-        { value: "type", label: "Multicolor Fridge" },
-        { value: "type", label: "Black Fridge" },
-        { value: "type", label: "Grey Fridge" },
-    ];
+const CatalogFilter = ({ applyFilter }) => {
+  const [minPrice] = useState("");
+  const [maxPrice] = useState("");
+  const [sortBy] = useState("");
+  const [selectedType, setSelectedType] = useState("Any");
+  const [selectedBrand, setSelectedBrand] = useState("Any");
+  const [selectedPriceRange, setSelectedPriceRange] = useState("Any");
 
-    const brandOptions = [
-        { value: "brand", label: "Any brands" },
-        { value: "brand", label: "Samsung" },
-        { value: "brand", label: "Philipes" },
-    ];
+  const handleApplyClick = () => {
 
-    const priceOptions = [
-        { value: "price", label: "Any price" },
-        { value: "price", label: "up to 2000$" },
-        { value: "price", label: "more than 2000$" },
-    ];
-
-    const typeSettings = {
-        id: 'filters__by-type',
-        label: 'Filter by type:',
-        name: 'type',
-        class_name: 'type',
-    }
-
-    const brandSettings = {
-        id: 'filters__by-brand',
-        label: 'Filter by brand:',
-        name: 'brand',
-        class_name: 'brand',
-    }
-
-    const priceSettings = {
-        id: 'filters__by-price',
-        label: 'Filter by price:',
-        name: 'price',
-        class_name: 'price',
-    }
-
-    const selectArray = [
-        { options: typeOptions, settings: typeSettings },
-        { options: priceOptions, settings: priceSettings },
-        { options: brandOptions, settings: brandSettings },
-    ];
-
-    const [selectedFilters, setSelectedFilters] = useState({
-        type: 'Any type',
-        brand: 'Any brands',
-        price: 'Any price',
+    applyFilter({
+      minPrice,
+      maxPrice,
+      sortBy,
+      type: selectedType,
+      brand: selectedBrand,
+      priceRange: selectedPriceRange,
     });
+  };
 
-    const [items, setItems] = useState([
-        { id: 1, type: "Yellow Fridge", brand: "Samsung", price: 1500 },
-        { id: 2, type: "Yellow Fridge", brand: "Samsung", price: 1900 },
-        { id: 3, type: "Multicolor Fridge", brand: "Philipes", price: 2699 },
-        { id: 4, type: "Multicolor Fridge", brand: "Philipes", price: 2100 },
-        { id: 5, type: "Black Fridge", brand: "Philipes", price: 2999 },
-        { id: 6, type: "Grey Fridge", brand: "Samsung", price: 3000 },
-    ]);
+  return (
+    <div>
+      <FiltersAll>
+      <LabelPrice>
+        Price:
+        <select
+          value={selectedPriceRange}
+          onChange={(e) => setSelectedPriceRange(e.target.value)} className='price__select'
+        >
+          <option value="Any">Any Price</option>
+          <option value="0-2000">Up to $2000</option>
+          <option value="2000">Above $2000</option>
+        </select>
+      </LabelPrice>
 
-    const handleApplyFilters = () => {
-        // Filter the items based on the selected filters
-        const filteredItems = items.filter(item => {
-            const typeFilter = selectedFilters.type === 'Any type' || item.type === selectedFilters.type;
-            const brandFilter = selectedFilters.brand === 'Any brands' || item.brand === selectedFilters.brand;
-            // Add more filters as needed
-    
-            return typeFilter && brandFilter;
-        });
-    
-        // Sort the filtered items based on the price
-        const sortedItems = filteredItems.slice().sort((a, b) => {
-            if (selectedFilters.price === 'up to 2000$') {
-                return a.price - b.price;
-            } else if (selectedFilters.price === 'more than 2000$') {
-                return b.price - a.price;
-            }
-    
-            // No specific price filter, maintain the order
-            return 0;
-        });
-    
-        // Now you can use sortedItems to update your UI or perform further actions
-        console.log(sortedItems);
-    };
+     <LabelType>
+        Type:
+        <select
+          value={selectedType}
+          onChange={(e) => setSelectedType(e.target.value)} className='type__select'
+        >
+          <option value="Any">Any Type</option>
+          <option value="Yellow Fridge">Yellow Fridge</option>
+          <option value="Multicolor Fridge">Multicolor Fridge</option>
+          <option value="Black Fridge">Black Fridge</option>
+          <option value="Grey Fridge">Grey Fridge</option>
 
-    return (
-        <section className="filters">
-            <div className="filters__all">
-                {selectArray.map((select, index) => (
-                    <Select
-                        key={index}
-                        options={select.options}
-                        settings={select.settings}
-                        selectedValue={selectedFilters[select.settings.name]}
-                        onSelectChange={(value) =>
-                            setSelectedFilters((prevFilters) => ({
-                                ...prevFilters,
-                                [select.settings.name]: value,
-                            }))
-                        }
-                    />
-                ))}
-                <button
-                    type="button"
-                    className="apply-button"
-                    id="apply-button"
-                    onClick={handleApplyFilters}
-                >
-                    Apply
-                </button>
-            </div>
-        </section>
-    );
+        </select>
+      </LabelType>
+
+      <LabelBrand>
+        Brand:
+        <select
+          value={selectedBrand}
+          onChange={(e) => setSelectedBrand(e.target.value)} className='brand__select'
+        >
+          <option value="Any">Any Brand</option>
+          <option value="Philipes">Philipes</option>
+          <option value="Samsung">Samsung</option>
+        </select>
+      </LabelBrand>
+
+      <ApplyButton onClick={handleApplyClick}>
+        <p>Apply</p>
+      </ApplyButton>
+      </FiltersAll>
+    </div>
+  );
 };
 
-export default CatalogFilters;
-
+export default CatalogFilter;
