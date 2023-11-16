@@ -13,7 +13,7 @@ border-radius: 15px;
 padding: 5px 0px 15px 10px;
 font-size: 19px;
 font-family: "Poppins-Medium";
-margin-left: 50px;
+margin-left: 75px;
 margin-right: 20px; 
 select {
     padding-right: 65px }
@@ -40,9 +40,8 @@ border-radius: 15px;
 padding: 5px 0px 15px 10px;
 font-size: 19px;
 font-family: "Poppins-Medium";
-margin-right: 45px;
 select {
-    padding-right: 70px }
+    padding-right: 70cd my-px }
 `;
 
 export const ApplyButton = styled.button`
