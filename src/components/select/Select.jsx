@@ -1,20 +1,13 @@
 import React from 'react';
-function Select(props) {
-    const { options, settings } = props;
-    const { label, id, name } = settings;
 
-    return (
-        <div className="select">
-            <label htmlFor={id} id='select_filter' className={`filters__by-${name}`}>{label}</label>
-            <select id={id} className={`filters__by-${name}`} name={name}>
-                {options.map(option => (
-                    <option key={option.value} value={option.value}>
-                        {option.label}
-                    </option>
-                ))}
-            </select>
-        </div>
-    );
-}
+export const SelectOption = ({ value, label }) => (
+  <option value={value}>{label}</option>
+);
 
-export default Select;
+export const Select = ({ options, value, onChange, className }) => (
+  <select value={value} onChange={onChange} className={className}>
+    {options.map((option) => (
+      <SelectOption key={option.value} value={option.value} label={option.label} />
+    ))}
+  </select>
+);

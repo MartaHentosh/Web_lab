@@ -57,3 +57,29 @@ margin-left: 100px;
 &:hover {
     background-color: #625f5f;
 `;
+
+export const Labels = styled.label`
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  border: 1px solid #d6d6d6;
+  border-radius: 12px;
+  padding: 0 1.2vw;
+  border: 2px solid #7A7A7A;
+  border-radius: 15px;
+  font-family: "Poppins-Medium";
+
+  input {
+    padding: 0;
+    padding-left: 5px;
+    border: 1px solid #7A7A7A;
+    border-radius: 4px;
+    margin-left: 10px;
+    width: 200px;
+    height: 26px;
+    font-family: "Poppins-Regural";
+    font-size:16px;
+    &:hover {
+      box-shadow: 2px 3px 5px #bbbbbb;
+  }
+`;
