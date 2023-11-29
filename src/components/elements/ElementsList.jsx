@@ -1,71 +1,33 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from "react";
+import { NavLink } from "react-router-dom";
 import './elementsList.css';
-import fridge1 from './fridgeImages/fridge1.jpg';
-import fridge2 from './fridgeImages/fridge2.jpg';
-import fridge3 from './fridgeImages/fridge3.jpg';
-import fridge4 from './fridgeImages/fridge4.jpg';
-import fridge5 from './fridgeImages/fridge5.jpg';
-import fridge6 from './fridgeImages/fridge6.jpg';
+import { getFridges } from "../../api";
+// import {setFilteredData} from '../../pages/catalog/Catalog';
+import Loader from "../spinner/Loader";
+// import getElements from "./getElements";
 
-export const elementsData = [
-  {
-    id: 1,
-    imgSrc: fridge1,
-    type: "Yellow Fridge",
-    description:
-      "Soft rounded curves combined with vibrant or pastel colours create real character in the kitchen.",
-    brand: "Samsung",
-    price: 1500,
-  },
-  {
-    id: 2,
-    imgSrc: fridge2,
-    type: "Yellow Fridge",
-    description:
-      "A new Samsung BESPOKE Fridge with custom panels allows you to customize type for your stylish design.",
-    brand: "Samsung",
-    price: 1900,
-  },
-  {
-    id: 3,
-    imgSrc: fridge3,
-    type: "Multicolor Fridge",
-    description:
-      "Renovating your kitchen? Make sure the refrigerator fits your style too! Choose your color and buy it.",
-    brand: "Philipes",
-    price: 2699,
-  },
-  {
-    id: 4,
-    imgSrc: fridge4,
-    type: "Multicolor Fridge",
-    description:
-      "A monochrome fridge is so 2020. The new BESPOKE 4-Door Flex™ refrigerator comes in a range of colors.",
-    brand: "Philipes",
-    price: 2100,
-  },
-  {
-    id: 5,
-    imgSrc: fridge5,
-    type: "Black Fridge",
-    description:
-      "Family Hub is designed to store more of everything for the whole family with a modern look to match your kitchen style.",
-    brand: "Philipes",
-    price: 2999,
-  },
-  {
-    id: 6,
-    imgSrc: fridge6,
-    type: "Grey Fridge",
-    description:
-      "Reduce your food waste successfully with this inspiring, motivating post on How To Organize Your Fridge.",
-    brand: "Samsung",
-    price: 3000,
-  },
-];
-
-const Elements = ({ elementsData }) => {
+const Elements = () => {
+  const [elementsData, setElementsData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [filteredData, setFilteredData] = useState(elementsData);
   const [searchTerm, setSearchTerm] = useState('');
+
+  useEffect(() => {
+    setLoading(true);
+    getFridges()
+      .then(response => {
+            console.log(response)
+            setElementsData(response.data);
+            setFilteredData(response.data)
+          setLoading(false);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+
+        setLoading(false);
+      });
+
+  }, []);
 
   const handleSearch = () => {
     const results = searchTerm
@@ -81,6 +43,7 @@ const Elements = ({ elementsData }) => {
 
   return (
     <section className="elements">
+      {loading ? <Loader /> : null}
       <div className='search__part'>
         <label htmlFor="searchTerm"></label>
         <input
@@ -102,6 +65,7 @@ const Elements = ({ elementsData }) => {
             <p className="elements__description">{element.description}</p>
             <p className="elements__brand">{element.brand}</p>
             <p className="elements__price">{element.price} $</p>
+            <NavLink className="elements__button" exact to={`/Catalog/${element.id}`}>View more</NavLink>
           </div>
         ))}
         {searchTerm && handleSearch().length === 0 && (

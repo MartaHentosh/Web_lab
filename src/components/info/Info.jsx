@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import qualityImg from './../../img/quality.jpg';
-import pricesImg from './../../img/prices.jpg';
-import serviceImg from './../../img/service.jpeg';
-import info4Img from './../../img/info4.jpg';
-import info5Img from './../../img/info5.jpg';
-import info6Img from './../../img/info6.jpg';
+import qualityImg from '../../img/quality.jpg';
+import pricesImg from '../../img/prices.jpg';
+import serviceImg from '../../img/service.jpeg';
+import info4Img from '../../img/info4.jpg';
+import info5Img from '../../img/info5.jpg';
+import info6Img from '../../img/info6.jpg';
 import './info.css';
 import Button from '../button/Button';
 
