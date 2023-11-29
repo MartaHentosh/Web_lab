@@ -1,32 +1,15 @@
-import React, {useEffect, useState} from "react";
+// elementsList.jsx
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import './elementsList.css';
-import { getFridges } from "../../api";
-// import {setFilteredData} from '../../pages/catalog/Catalog';
+import "./elementsList.css";
 import Loader from "../spinner/Loader";
-// import getElements from "./getElements";
 
-const Elements = () => {
-  const [elementsData, setElementsData] = useState([]);
+const Elements = ({ elementsData }) => {  // Change prop name to elementsData
   const [loading, setLoading] = useState(true);
-  const [filteredData, setFilteredData] = useState(elementsData);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    setLoading(true);
-    getFridges()
-      .then(response => {
-            console.log(response)
-            setElementsData(response.data);
-            setFilteredData(response.data)
-          setLoading(false);
-      })
-      .catch(error => {
-        console.error('Error:', error);
-
-        setLoading(false);
-      });
-
+    setLoading(false);
   }, []);
 
   const handleSearch = () => {
@@ -44,10 +27,10 @@ const Elements = () => {
   return (
     <section className="elements">
       {loading ? <Loader /> : null}
-      <div className='search__part'>
+      <div className="search__part">
         <label htmlFor="searchTerm"></label>
         <input
-          className='search'
+          className="search"
           type="text"
           id="searchTerm"
           value={searchTerm}
@@ -58,16 +41,30 @@ const Elements = () => {
         />
       </div>
       <div className="elements_list">
-        {handleSearch().map((element) => (
-          <div className="elements__part" key={element.id}>
-            <img className="elements__image" src={element.imgSrc} alt={element.type} />
-            <h3 className="elements__type">{element.type}</h3>
-            <p className="elements__description">{element.description}</p>
-            <p className="elements__brand">{element.brand}</p>
-            <p className="elements__price">{element.price} $</p>
-            <NavLink className="elements__button" exact to={`/Catalog/${element.id}`}>View more</NavLink>
-          </div>
-        ))}
+        {handleSearch().map((element) => {
+          const imagePath = element.imgSrc;
+          console.log('Image Source:', imagePath);
+          return (
+            <div className="elements__part" key={element.id}>
+              <img
+                className="elements__image"
+                src={imagePath}
+                alt={element.type}
+              />
+              <h3 className="elements__type">{element.type}</h3>
+              <p className="elements__description">{element.description}</p>
+              <p className="elements__brand">{element.brand}</p>
+              <p className="elements__price">{element.price} $</p>
+              <NavLink
+                className="elements__button"
+                exact
+                to={`/Catalog/${element.id}`}
+              >
+                View more
+              </NavLink>
+            </div>
+          );
+        })}
         {searchTerm && handleSearch().length === 0 && (
           <p>No matching elements found</p>
         )}
