@@ -33,8 +33,9 @@
 ### Лабораторна робота №8 (Варіант 3)
 Посилання на вітку [тут](https://github.com/MartaHentosh/Web_lab/tree/lab8)
 
+***
 ### Лабораторна робота №9 (Варіант 3)
-Посилання на вітку [тут](https://google.com)
+Посилання на вітку [тут](https://github.com/MartaHentosh/Web_lab/tree/lab9)
 
 ***
 ### Лабораторна робота №10 (Варіант 3)
