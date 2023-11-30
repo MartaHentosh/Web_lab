@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = "http://localhost:5000";  // Update the base URL to match your server configuration
+const baseURL = "http://localhost:5000";
 
 const api = axios.create({
   baseURL,

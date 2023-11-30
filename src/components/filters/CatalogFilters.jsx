@@ -1,4 +1,3 @@
-// CatalogFilter.jsx
 import React, { useState } from 'react';
 import { ApplyButton, LabelPrice, LabelType, LabelBrand, FiltersAll } from "./CatalogFilter.styled.jsx";
 import "./catalogFilters.css";

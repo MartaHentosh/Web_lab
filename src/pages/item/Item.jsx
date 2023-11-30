@@ -2,10 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getFridgeInfo } from "../../api";
 import Loader from "../../components/spinner/Loader";
-// import { elementsData } from '../../../../server';
-// import Elements from "../../components/elements/ElementsList";
 import './item.css';
 import { NavLink } from 'react-router-dom';
+import img_static from "../../fridgeImages/fridge1.jpg";
 
 const Item = () => {
   const { id } = useParams();
@@ -21,28 +20,11 @@ const Item = () => {
       })
       .catch((error) => {
         setLoading(false);
-        console.error("Помилка під час отримання даних про камінь:", error);
+        console.error("Error:", error);
       });
   }, [id]);
 
-  // const imagePath = img_static;
-
-
-
-  // const { id } = useParams();
-  // const [element, setElement] = useState(null);
-
-  // useEffect(() => {
-  //   const foundElement = elementsData.find((el) => el.id === parseInt(id));
-
-  //   if (foundElement) {
-  //     setElement(foundElement);
-  //   }
-  // }, [id]);
-
-  // if (!element) {
-  //   return <div>Element not found</div>;
-  // }
+  const imagePath = img_static;
 
   return (
     <section>
@@ -51,7 +33,8 @@ const Item = () => {
       ) : (
         <div className="element">
           <div className="element__content">
-            <img className="element__image" src={elementsData.imgSrc} alt={elementsData.type} />
+            {/* <img className="element__image" src={elementsData.imgSrc} alt={elementsData.type} /> */}
+            <img className={elementsData.element__image} src={img_static} alt={elementsData .img_title} height="500" width="350"/>
             <div className="element__container">
               <p className="element__brand">{elementsData.brand}</p>
               <h1 className="element__type">{elementsData.type}</h1>

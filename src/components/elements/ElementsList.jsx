@@ -1,10 +1,10 @@
-// elementsList.jsx
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./elementsList.css";
 import Loader from "../spinner/Loader";
+import img_static from "../../fridgeImages/fridge1.jpg"
 
-const Elements = ({ elementsData }) => {  // Change prop name to elementsData
+const Elements = ({ elementsData }) => {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -42,15 +42,11 @@ const Elements = ({ elementsData }) => {  // Change prop name to elementsData
       </div>
       <div className="elements_list">
         {handleSearch().map((element) => {
-          const imagePath = element.imgSrc;
-          console.log('Image Source:', imagePath);
+          // const imagePath = element.imgSrc;
+          // console.log('Image Source:', imagePath);
           return (
             <div className="elements__part" key={element.id}>
-              <img
-                className="elements__image"
-                src={imagePath}
-                alt={element.type}
-              />
+              <img className={element.img} src={img_static} alt={element.img_title} height="500" width="350"/>
               <h3 className="elements__type">{element.type}</h3>
               <p className="elements__description">{element.description}</p>
               <p className="elements__brand">{element.brand}</p>
