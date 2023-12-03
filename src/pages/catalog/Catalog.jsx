@@ -36,7 +36,7 @@ function Catalog() {
         setElementsData(initialData);
         setFilteredData(initialData);
         setHasData(initialData.length > 0);
-        setLoading(false);
+        setLoading(false); 
       })
       .catch(error => {
         console.error("Error fetching initial data:", error);

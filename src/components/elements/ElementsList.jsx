@@ -42,11 +42,9 @@ const Elements = ({ elementsData }) => {
       </div>
       <div className="elements_list">
         {handleSearch().map((element) => {
-          // const imagePath = element.imgSrc;
-          // console.log('Image Source:', imagePath);
           return (
             <div className="elements__part" key={element.id}>
-              <img className={element.img} src={img_static} alt={element.img_title} height="500" width="350"/>
+              <img className="elements__image" src={img_static} alt={element.img_title} />
               <h3 className="elements__type">{element.type}</h3>
               <p className="elements__description">{element.description}</p>
               <p className="elements__brand">{element.brand}</p>

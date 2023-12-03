@@ -5,17 +5,22 @@ import Loader from "../../components/spinner/Loader";
 import './item.css';
 import { NavLink } from 'react-router-dom';
 import img_static from "../../fridgeImages/fridge1.jpg";
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../redux/actions'
 
 const Item = () => {
   const { id } = useParams();
   const [elementsData, setElementsData] = useState(true);
   const [loading, setLoading] = useState(true);
+  const [inputValue, setInputValue] = useState("")
+  const dispatch = useDispatch();
+  const imagePath = img_static;
 
   useEffect(() => {
     setLoading(true);
     getFridgeInfo(id)
       .then((response) => {
-        setElementsData(response.data);
+        setElementsData(response.data); 
         setLoading(false);
       })
       .catch((error) => {
@@ -24,7 +29,19 @@ const Item = () => {
       });
   }, [id]);
 
-  const imagePath = img_static;
+  const inputChange = (event) => {
+    const inputValue = event.target.value;
+    setInputValue(inputValue);
+  };
+
+  const handleAddToCart = () => {
+        let amount = 1;
+        if (parseInt(inputValue) > 1) {
+          amount = parseInt(inputValue);
+        }
+        dispatch(addToCart(elementsData, amount));
+        alert("Your object added to cart")
+    };
 
   return (
     <section>
@@ -33,15 +50,14 @@ const Item = () => {
       ) : (
         <div className="element">
           <div className="element__content">
-            {/* <img className="element__image" src={elementsData.imgSrc} alt={elementsData.type} /> */}
-            <img className={elementsData.element__image} src={img_static} alt={elementsData .img_title} height="500" width="350"/>
+            <img className= "element__image" src={img_static} alt={elementsData.img_title} />
             <div className="element__container">
               <p className="element__brand">{elementsData.brand}</p>
               <h1 className="element__type">{elementsData.type}</h1>
               <p className="element__description">{elementsData.description}</p>
               <span className='select__text'>Amount:</span>
               <label>
-                <input className="count__input" type="number" name="countInput" min={1} />
+                <input className="count__input" type="number" name="countInput" min={1} onChange={inputChange} />
               </label>
               <div>
                 <span className='select__text'>Material:</span>
@@ -62,9 +78,9 @@ const Item = () => {
             <NavLink exact to={`/Catalog`}>
               <button className="element__button1">Go Back</button>
             </NavLink>
-            <NavLink exact to={`/Cart`}>
-              <button className="element__button2">Add to cart</button>
-            </NavLink>
+            <div className="element__button2">
+              <button onClick={handleAddToCart}>Add to cart</button>
+            </div>
           </div>
 
 
