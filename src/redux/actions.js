@@ -1,11 +1,14 @@
-export const addToCart = (elementData, amount) => ({
+export const addToCart = (elementData, amount) => {
+  console.log('Adding to cart:', elementData, amount);
+  return {
     type: 'ADD_TO_CART',
     payload: {
-        elementData,
-        amount,
+      elementData,
+      amount,
     },
-  });
-  
+  };
+};
+
   export const removeFromCart = (elementDataId) => ({
     type: 'REMOVE_FROM_CART',
     payload: elementDataId,

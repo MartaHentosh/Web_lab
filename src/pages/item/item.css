@@ -27,7 +27,7 @@
 .element__type {
     font-family: "Poppins-Medium";
     font-size: 30px;
-    color: #156371;;
+    color: #156371;
 }
 
 .element__description {
@@ -77,6 +77,11 @@
     font-family: "Poppins-Medium";
     margin-top: 20px;
     border: 2px solid #7A7A7A;
+    height: 2.5rem;
+}
+
+.element__button1:hover{
+    background-color: #f3f1f1;
 }
 
 .element__button2:hover {

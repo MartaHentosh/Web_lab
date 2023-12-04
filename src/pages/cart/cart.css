@@ -2,7 +2,8 @@
     display: flex;
     height: 7rem;
     border: 2px solid ;
-    border-radius: 10px;
+    border-color: #258798;
+    border-radius: 12px;
     margin: 1rem;
     justify-content: space-around;
 }
@@ -11,6 +12,7 @@
     margin-top: auto;
     margin-bottom: auto;
     margin-left: -5rem;
+    border-radius: 12px;
 }
 
 .cart__texts{
@@ -18,32 +20,31 @@
     margin-top: auto;
     margin-bottom: auto;
     margin-left: 0;
-    /*margin: auto;*/
 }
 
 .cart__img{
     margin-left: -5rem;
 }
 
-.cart__object__title{
-    color: #0B132A;
+.cart__type{
+    color: #156371;
     font-weight: 750;
 }
 
-.cart__object__title,
-.cart__object__strength,
-.cart__object__price {
+.cart__type,
+.cart__brand,
+.cart__price {
     margin-left: 1rem;
     margin-right: 1rem;
     font-size: 20px;
 }
 
-.cart__object__amount{
+.cart__amount{
     margin-top: auto;
     margin-bottom: auto;
 }
 
-.cart__object__total-price{
+.cart__total-price{
     margin-top: auto;
     margin-bottom: auto;
 }
@@ -51,29 +52,76 @@
 .cart__total{
     margin-top: auto;
     margin-bottom: auto;
-    margin-left: 2rem;
+    margin-left: 1156px;
+    font-size: 25px;
+    font-family: "Poppins-Medium";
 }
 
 .cart__object__right{
    display: flex;
 }
 
-.cart__object__increment{
-    background-color: #BFBFBF;
+.button__plus,
+.button__minus{
+    background-color: #fff;
+    font-size: 17px;
     height: 2rem;
     width: 2rem;
     margin: auto 0.5rem;
-    border-radius: 10px;
-    border: 1px;
+    border-color: #258798;
+    border-radius: 12px;
+    font-family: "Poppins-Medium";
+    color:#7A7A7A;
     cursor: pointer;
 }
 
-.cart__object__remove{
-    background-color: #BFBFBF;
-    height: 2rem;
-    width: 5rem;
-    border-radius: 10px;
-    border: 1px;
-    margin: auto -2rem auto 0.5rem;
+.button__remove{
+    height: 3rem;
+    width: 6rem;
+    color: #258798;
+    border-radius: 50px;
+    border-color: #258798;
+    background-color: white;
     cursor: pointer;
+    margin: auto -2rem auto 0.5rem;
+    font-size: 17px;
+}
+.cart__buttons{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px; 
+    margin-bottom: 40px;
+}
+
+.button__go-back{
+    background-color: #fff;
+    font-size: 17px;
+    padding: 8px 16px;
+    border-color: #7A7A7A;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 12px;
+    font-family: "Poppins-Medium";
+    color:#7A7A7A;
+}
+
+.button__continue{
+    background-color: #7A7A7A;
+    color: #fff;
+    font-size: 17px;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 12px;
+    font-family: "Poppins-Medium";
+    border: 2px solid #7A7A7A;
+}
+
+.button__continue:hover {
+    background-color: #625f5f;
+}
+
+.button__go-back:hover{
+    background-color: #f3f1f1;
 }
