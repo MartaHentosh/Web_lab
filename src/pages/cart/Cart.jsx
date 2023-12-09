@@ -1,12 +1,15 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart, plus, minus } from '../../redux/actions';
+import { useNavigate } from "react-router-dom";
 import './cart.css'
 import img_static from '../../fridgeImages/fridge1.jpg'
+
 
 function Cart() {
     const elementsData = useSelector((state) => state.cart);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const handleRemoveFromCart = (elementDataId) => {
         dispatch(removeFromCart(elementDataId));
@@ -32,6 +35,14 @@ function Cart() {
 
     const goBack = () => {
         window.history.back();
+    };
+
+    const handleContinue = () => {
+        if (elementsData.length > 0) {
+            navigate('/Checkout');
+        } else {
+            alert("The cart is empty.");
+        }
     };
 
     return(
@@ -70,14 +81,14 @@ function Cart() {
                         </div>
                     </div>
                 ))}
-                <div className="cart__total">
+                <div className="cart__total ">
                     Total amount: {elementsData.reduce((total, item) => total + calculateTotalAmount(item.elementData.price, item.amount), 0)} $
                 </div>
                 <div className="cart__buttons">
                     <button className='button__go-back' onClick={goBack}>
                         Go Back
                     </button>
-                    <button className='button__continue'>
+                    <button className='button__continue' onClick={handleContinue}>
                         Continue
                     </button>
                 </div>

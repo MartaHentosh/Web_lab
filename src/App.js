@@ -6,6 +6,8 @@ import Home from './pages/home/Home'
 import Catalog from "./pages/catalog/Catalog";
 import Item from "./pages/item/Item"
 import Cart from "./pages/cart/Cart";
+import Checkout from "./pages/checkout/Checkout";
+import Success from "./pages/success/Success";
 import { getFridges } from "./api";
 
 function App() {
@@ -31,6 +33,8 @@ function App() {
         <Route path="/Catalog" element={<Catalog />} />
         <Route path="/Catalog/:id" element={<Item elementsData={elementsData} />} />
         <Route path="/Cart" element={<Cart />} />
+        <Route path="/Checkout" element={<Checkout />} />
+        <Route path='/Success' element={<Success/>}/>
       </Routes>
       <Footer />
     </Router>
