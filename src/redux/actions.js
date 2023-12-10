@@ -23,4 +23,8 @@ export const addToCart = (elementData, amount) => {
     type: 'MINUS',
     payload: elementDataId,
   });
+
+  export const clearCart = () => ({
+    type: 'CLEAR_CART',
+  });
   

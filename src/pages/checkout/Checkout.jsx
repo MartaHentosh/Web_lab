@@ -3,6 +3,8 @@ import {Form, Formik, useField} from 'formik';
 import * as Yup from 'yup';
 import FormError from "../../components/formError/Error";
 import { useNavigate } from 'react-router-dom';
+import {useDispatch} from 'react-redux';
+import {clearCart} from "../../redux/actions"
 import './checkout.css'
 
 const CustomTextInput = ({label, ...props}) => {
@@ -22,6 +24,7 @@ const goBack = () => {
 
 function Checkout() {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     return(
         <section className="checkout">
             <div className="checkout__items">
@@ -61,6 +64,8 @@ function Checkout() {
                                 alert(JSON.stringify(values, null, 2));
                                 resetForm();
                                 setSubmitting(false);
+                                
+                                dispatch(clearCart());
 
                                 navigate('/success');
                             }, 1000)
