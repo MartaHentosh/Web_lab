@@ -1,10 +1,32 @@
 import React from 'react';
 import fridgelogoImg from '../../img/fridgelogo.svg'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import './header.css'
 
-function Header () {
+function Header ({setLoggedUser}) {
+    const navigate = useNavigate();
+
+    const loggedInUserIndex = localStorage.getItem("loggedInUserIndex");
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+
+    const loggedInUser = loggedInUserIndex !== null ? users[loggedInUserIndex] : null;
+
+    const handleLogout = () => {
+        if (loggedInUserIndex !== null) {
+            //users.splice(loggedInUserIndex, 1);
+
+           // localStorage.setItem("users", JSON.stringify(users));
+
+            localStorage.removeItem("loggedInUserIndex");
+            setLoggedUser(null);
+            navigate("/");
+            console.log('navigating to signup')
+
+
+            console.log(`${loggedInUser.name} has signed out.`);
+        }
+    };
     return (
         <header className="header">
             <div className="container">
@@ -19,6 +41,9 @@ function Header () {
                             <li><Link exact to="/Cart">Cart</Link></li>
                         </ul>
                     </nav>
+                    <div className='button-out'>
+                    <button className='sign-out' onClick={handleLogout}>Sign out me!</button>
+                    </div>
                 </div>
             </div>
         </header>

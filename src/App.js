@@ -8,27 +8,35 @@ import Item from "./pages/item/Item"
 import Cart from "./pages/cart/Cart";
 import Checkout from "./pages/checkout/Checkout";
 import Success from "./pages/success/Success";
+import Login from "./pages/login/Login";
+import SignUp from "./pages/sign-up/Sign-up";
 import { getFridges } from "./api";
 
 function App() {
   const [elementsData, setElementsData] = useState('');
+  const [loggedUser, setLoggedUser] = useState(null);
+  const loggedInUserIndex = localStorage.getItem("loggedInUserIndex");
 
   useEffect(() => {
+    setLoggedUser(loggedInUserIndex);
     getFridges()
-      .then(response => {
+        .then(response => {
             console.log(response)
-          setElementsData(response.data);
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
-  }, []);
-  console.log(elementsData)
+            setElementsData(response.data);
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+        });
+}, []);
 
+console.log(elementsData)
+ if(loggedUser){
   return (
     <Router>
-      <Header />
+      <Header setLoggedUser={setLoggedUser}/>
       <Routes>
+      {/* <Route path="/Login" element={<Login />} />
+      <Route path="/SignUp" element={<SignUp />} /> */}
         <Route path="/Home" element={<Home />} />
         <Route path="/Catalog" element={<Catalog />} />
         <Route path="/Catalog/:id" element={<Item elementsData={elementsData} />} />
@@ -39,6 +47,16 @@ function App() {
       <Footer />
     </Router>
   );
+ }else{
+  return(
+    <Router>
+        <Routes>
+            <Route path="/Login" element={<Login setLoggedUser={setLoggedUser}/>} />
+            <Route path="/" element={<SignUp />} />
+        </Routes>
+    </Router>
+);
+ }
 }
 
 export default App;
